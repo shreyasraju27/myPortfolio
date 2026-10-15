@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500&family=Corinthia&family=Space+Grotesk:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-night: #040405;
+  --color-gold: #dfe6ee;
+  --color-gold-light: #f1efe9;
+  --color-ink: #f1efe9;
+  --color-mute: #8d939c;
+  --font-display: "Anton", Impact, sans-serif;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-script: "Corinthia", cursive;
+  --animate-drift: drift 16s ease-in-out infinite alternate;
+  @keyframes drift {
+    from { transform: translate3d(-4%, 0, 0) scale(1); }
+    to { transform: translate3d(6%, -3%, 0) scale(1.15); }
+  }
+}
+
+@utility text-gold {
+  background-image: linear-gradient(180deg, #ffffff 0%, #dfe6ee 55%, #8f99a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 22px rgba(223, 230, 238, 0.32));
+}
+@utility text-pearl {
+  background-image: linear-gradient(180deg, #ffffff 0%, #b9bfc8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(223, 230, 238, 0.22);
+  backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+}
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+html { background: var(--color-night); color: var(--color-ink); }
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(ellipse 60% 40% at 85% -5%, rgba(223, 230, 238, 0.09), transparent 70%),
+    var(--color-night);
+}
+:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
