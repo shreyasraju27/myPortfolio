@@ -29,7 +29,18 @@ function Card({ p, i, n, progress }: { p: Project; i: number; n: number; progres
               ))}
             </dl>
           </div>
-          {p.href && <a href={p.href} className="label border border-gold/50 px-5 py-3 text-center text-gold-light transition-colors hover:bg-gold/10">View on GitHub &#8599;</a>}
+          <div className="flex flex-col gap-3">
+            {p.demo && (
+              <a href={p.demo} target="_blank" rel="noreferrer" className="label border border-gold bg-gold/10 px-5 py-3 text-center text-gold-light transition-colors hover:bg-gold/20">
+                Watch demo &#9654;
+              </a>
+            )}
+            {p.href && (
+              <a href={p.href} target="_blank" rel="noreferrer" className="label border border-gold/50 px-5 py-3 text-center text-gold-light transition-colors hover:bg-gold/10">
+                View on GitHub &#8599;
+              </a>
+            )}
+          </div>
         </div>
       </article>
     </motion.div>

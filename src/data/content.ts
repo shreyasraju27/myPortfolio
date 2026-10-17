@@ -13,6 +13,7 @@ export type Project = {
   stack: string[];
   details: [string, string][];
   href?: string;
+  demo?: string;
 };
 
 export const projects: Project[] = [
@@ -28,6 +29,7 @@ export const projects: Project[] = [
       ["Approval gate", "Survives server restarts"],
     ],
     href: "https://github.com/shreyasraju27/autonomous-chargeback-defense-engine",
+    demo: "https://youtu.be/61miRh-Xfq4",
   },
   {
     tag: "02 // NLP // LLM",
